@@ -50,5 +50,10 @@ open class Position( open val x: Int, open val y: Int) {
         }
 
     override fun toString(): String = "$x, $y"
+    override fun hashCode(): Int {
+        var result = x
+        result = 31 * result + y
+        return result
+    }
 
 }
