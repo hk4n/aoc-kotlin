@@ -15,9 +15,18 @@ enum class Heading {
     DL
 }
 
+enum class DistanceMethods {
+    MANHATTAN,
+    EUCLIDEAN
+}
+
 open class Position( open val x: Int, open val y: Int) {
-    fun distance(that: Position): Double =
-        sqrt((abs( x - that.x).toDouble().pow(2)) + (abs(y - that.y).toDouble().pow(2)) )
+    fun distance(that: Position, distanceMethods: DistanceMethods  = DistanceMethods.EUCLIDEAN): Double =
+        when(distanceMethods) {
+            DistanceMethods.EUCLIDEAN ->
+                sqrt((abs( x - that.x).toDouble().pow(2)) + (abs(y - that.y).toDouble().pow(2)) )
+            DistanceMethods.MANHATTAN -> abs(x - that.x).toDouble() + abs(y - that.y).toDouble()
+        }
 
     fun heading(that: Position) : Heading = when {
         x == that.x && y < that.y -> Heading.R
