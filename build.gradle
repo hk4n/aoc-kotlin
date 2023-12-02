@@ -3,7 +3,7 @@ plugins {
     id 'application'
 }
 
-group = 'com.aoc2022'
+group = 'com.aoc-kotlin'
 version = '1.0-SNAPSHOT'
 
 repositories {
