@@ -1,3 +1,3 @@
 fun main(args: Array<String>) {
-    println("AOC 2022")
+    println("Advent Of Code - Kotlin edition")
 }
