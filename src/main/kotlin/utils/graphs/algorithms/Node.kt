@@ -6,7 +6,7 @@ enum class NodeType { regular, start, stop }
 data class Node<T>(
     val data: T,
     val position: Position,
-    val weight: Double,
+    val weight: Double = 0.0,
     val type: NodeType = NodeType.regular
 ) {
     override fun equals(other: Any?): Boolean {
